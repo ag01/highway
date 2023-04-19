@@ -2135,6 +2135,11 @@ V SumOfLanes(D d, V v) {
 }
 
 template <class D, class V>
+TFromV<V> SumOfLanesVal(D d, V v) {
+  return detail::SumOfLanesM(detail::MakeMask(d), v);
+}
+
+template <class D, class V>
 V MinOfLanes(D d, V v) {
   return Set(d, detail::MinOfLanesM(detail::MakeMask(d), v));
 }
